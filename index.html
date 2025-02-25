@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Corna - UX/UI Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-menu a:hover {
+            opacity: 0.8;
+        }
+        
+        .contact-btn {
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 10px 24px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: flex;
+            min-height: 600px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(153, 0, 0, 0.2) 0%, rgba(79, 0, 153, 0.2) 100%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            width: 50%;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .hero-image {
+            width: 50%;
+            position: relative;
+            height: 600px;
+        }
+        
+        .hero-image img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            max-width: 80%;
+        }
+        
+        .hire-btn {
+            background-color: #0066ff;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .hire-btn i {
+            margin-left: 8px;
+        }
+        
+        .digital-badge {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .digital-badge-inner {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .digital-badge-inner i {
+            font-size: 20px;
+        }
+        
+        /* Brand Section */
+        .brands {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            opacity: 0.6;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .brand-logo {
+            max-width: 100px;
+            filter: grayscale(100%);
+        }
+        
+        /* Services Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .service-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            color: #0066ff;
+            font-size: 28px;
+        }
+        
+        .service-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .service-desc {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            margin-bottom: 80px;
+            padding: 0 20px;
+        }
+        
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .testimonials-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        
+        .testimonial-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-card {
+            flex: 0 0 calc(33.33% - 30px);
+            margin: 0 15px;
+            border-radius: 10px;
+            background-color: rgba(40, 40, 40, 0.5);
+            padding-bottom: 30px;
+        }
+        
+        .testimonial-content {
+            padding: 30px 30px 20px;
+        }
+        
+        .testimonial-text {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-position {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+        }
+        
+        .slider-dot.active {
+            background-color: #0066ff;
+        }
+        
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .slider-prev {
+            left: 20px;
+        }
+        
+        .slider-next {
+            right: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #fff;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .newsletter-input {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            padding: 10px 15px;
+            color: #fff;
+            border-radius: 5px 0 0 5px;
+            flex-grow: 1;
+        }
+        
+        .newsletter-btn {
+            background-color: #0066ff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .testimonial-card {
+                flex: 0 0 calc(50% - 30px);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero-content, .hero-image {
+                width: 100%;
+            }
+            
+            .hero-image {
+                height: 400px;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .hero-image img {
+                position: relative;
+                max-width: 100%;
+            }
+            
+            .services {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: #111;
+                padding: 20px;
+                z-index: 100;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero {
+                min-height: auto;
+            }
+            
+            .hero-content {
+                padding: 40px 0;
+            }
+            
+            .digital-badge {
+                display: none;
+            }
+            
+            .testimonial-card {
+                flex: 0 0 calc(100% - 30px);
+            }
+            
+            .brands {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .service-title {
+                font-size: 18px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Work & Education Section.............................. */
+        .work-education {
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.timeline-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    position: relative;
+}
+
+.timeline-half {
+    padding-bottom: 40px;
+}
+
+.timeline-half-title {
+    font-size: 56px;
+    color: rgba(255, 255, 255, 0.15);
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.timeline-year {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.timeline-year i {
+    color: #4CAF50;
+    font-size: 20px;
+}
+
+.timeline-year span {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.timeline-position {
+    color: #4CAF50;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timeline-content {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.timeline-action {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.timeline-action:hover {
+    background-color: #0066ff;
+}
+
+/* Connector and Dot */
+.timeline-connector {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.connector-line {
+    width: 2px;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.connector-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    border: 4px solid #0a0a0a;
+    position: relative;
+    z-index: 1;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">JOEL-TWINO</div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-menu">
+                <a href="#">Demos</a>
+                <a href="#">Solutions</a>
+                <a href="#">Team</a>
+                <a href="#">Projects</a>
+                <a href="#">Blog</a>
+                <button class="contact-btn">Contact Us</button>
+            </div>
+        </header>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hello Guys<br>I'm JOEL-TWINO<br>Devloper&Designer</h1>
+                <p>Expereinced Developer and Designer</p>
+                <button class="hire-btn">HIRE ME <i class="fas fa-arrow-right"></i></button>
+                
+                <div class="digital-badge">
+                    <div class="digital-badge-inner">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Twino.JPG" alt="David Corna">
+            </div>
+        </section>
+        
+        <!-- Brands Section -->
+        <div class="brands">
+            <img src="Google.png" alt="Google" class="brand-logo">
+            <img src="/api/placeholder/100/40" alt="Yahoo" class="brand-logo">
+            <img src="/api/placeholder/100/40" alt="Dribbble" class="brand-logo">
+            <img src="/api/placeholder/100/40" alt="Pinterest" class="brand-logo">
+            <img src="/api/placeholder/100/40" alt="Behance" class="brand-logo">
+        </div>
+        
+        <!-- Services Section -->
+        <section class="services">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="service-title">Design Research</h3>
+                <p class="service-desc">Sit amet consectetur adipisc elit ortor purus aenean dictumst nibh mauris sed morebimet neque gravida tempor condimentum</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="service-title">SEO Optimization</h3>
+                <p class="service-desc">Sit amet consectetur adipisc elit ortor purus aenean dictumst nibh mauris sed morebimet neque gravida tempor condimentum</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="service-title">Web Development</h3>
+                <p class="service-desc">Sit amet consectetur adipisc elit ortor purus aenean dictumst nibh mauris sed morebimet neque gravida tempor condimentum</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3 class="service-title">IT Consultations</h3>
+                <p class="service-desc">Sit amet consectetur adipisc elit ortor purus aenean dictumst nibh mauris sed morebimet neque gravida tempor condimentum</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <h3 class="service-title">Computer Hardware Maintenance</h3>
+                <p class="service-desc">Sit amet consectetur adipisc elit ortor purus aenean dictumst nibh mauris sed morebimet neque gravida tempor condimentum</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="service-title">UI/UX Design</h3>
+                <p class="service-desc">Sit amet consectetur adipisc elit ortor purus aenean dictumst nibh mauris sed morebimet neque gravida tempor condimentum</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+                <h3 class="service-title">Digital Forensics Analysis</h3>
+                <p class="service-desc">Sit amet consectetur adipisc elit ortor purus aenean dictumst nibh mauris sed morebimet neque gravida tempor condimentum</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+                <h3 class="service-title">SEO Optimizer</h3>
+                <p class="service-desc">Sit amet consectetur adipisc elit ortor purus aenean dictumst nibh mauris sed morebimet neque gravida tempor condimentum</p>
+            </div>
+        </section>
+
+        <!-- Work & Education Section -->
+        <!-- Work & Education Section -->
+<section class="work-education">
+    <h2 class="section-title">Work & Education</h2>
+    
+    <div class="timeline-container">
+        <!-- Work Experience -->
+        <div class="timeline-half">
+            <h3 class="timeline-half-title">WORK</h3>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2019 - 2020</span>
+                    </div>
+                    <h4 class="timeline-position">UI UX Designer</h4>
+                    <a href="#" class="timeline-action">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2020 - 2021</span>
+                    </div>
+                    <h4 class="timeline-position">UI UX Designer</h4>
+                    <a href="#" class="timeline-action">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2022 - 2023</span>
+                    </div>
+                    <h4 class="timeline-position">UI UX Designer</h4>
+                    <a href="#" class="timeline-action">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2024 - 2024</span>
+                    </div>
+                    <h4 class="timeline-position">UI UX Designer</h4>
+                    <a href="#" class="timeline-action">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education -->
+        <div class="timeline-half">
+            <h3 class="timeline-half-title">STUDY</h3>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2019 - 2020</span>
+                    </div>
+                    <h4 class="timeline-position">UI UX Designer</h4>
+                    <a href="#" class="timeline-action">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2020 - 2021</span>
+                    </div>
+                    <h4 class="timeline-position">UI UX Designer</h4>
+                    <a href="#" class="timeline-action">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2022 - 2023</span>
+                    </div>
+                    <h4 class="timeline-position">UI UX Designer</h4>
+                    <a href="#" class="timeline-action">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2024 - 2024</span>
+                    </div>
+                    <h4 class="timeline-position">UI UX Designer</h4>
+                    <a href="#" class="timeline-action">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Center Connector -->
+        <div class="timeline-connector">
+            <div class="connector-dot"></div>
+            <div class="connector-line"></div>
+            <div class="connector-dot"></div>
+            <div class="connector-line"></div>
+            <div class="connector-dot"></div>
+        </div>
+    </div>
+</section>
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="testimonials-header">
+                <h2 class="testimonials-title">What Our Clients Say Us</h2>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="slider-arrow slider-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                
+                <div class="testimonial-container">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="Twino.JPG" alt="Michael T. Henderson">
+                            </div>
+                            <div>
+                                <div class="testimonial-name">Michael T. Henderson</div>
+                                <div class="testimonial-position">CEO & Founder</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="Twino.JPG" alt="Richard A. Sanders">
+                            </div>
+                            <div>
+                                <div class="testimonial-name">Richard A. Sanders</div>
+                                <div class="testimonial-position">Web Designer</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="Twino.JPG" alt="Emma T. Hopkins">
+                            </div>
+                            <div>
+                                <div class="testimonial-name">Emma T. Hopkins</div>
+                                <div class="testimonial-position">CEO & Founder</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="/api/placeholder/50/50" alt="James Wilson">
+                            </div>
+                            <div>
+                                <div class="testimonial-name">James Wilson</div>
+                                <div class="testimonial-position">Marketing Director</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-arrow slider-next">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+            
+            <div class="slider-controls">
+                <div class="slider-dot active" data-index="0"></div>
+                <div class="slider-dot" data-index="1"></div>
+                <div class="slider-dot" data-index="2"></div>
+                <div class="slider-dot" data-index="3"></div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>JOEL-TWINO</h3>
+                    <p>Sit amet consectetur adipiscing eliuismod tincidunt risus, semper morbi tellus. Condimentum luctus ut feugiat tortor sed elementum.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Company History</a></li>
+                        <li><a href="#">Latest Service</a></li>
+                        <li><a href="#">Meet Our Team</a></li>
+                        <li><a href="#">Latest News & Resources</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Need a Career?</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">My Account</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe our newsletter to get our latest updates</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Email Address">
+                        <button class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                Copyright © Agency. All Right Reserved
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Testimonial Slider Functionality
+            const container = document.querySelector('.testimonial-container');
+            const dots = document.querySelectorAll('.slider-dot');
+            const prevBtn = document.querySelector('.slider-prev');
+            const nextBtn = document.querySelector('.slider-next');
+            let currentIndex = 0;
+            
+            // Calculate how many testimonials to show based on screen width
+            function getVisibleCount() {
+                if (window.innerWidth < 768) {
+                    return 1;
+                } else if (window.innerWidth < 1200) {
+                    return 2;
+                } else {
+                    return 3;
+                }
+            }
+            
+            // Function to update slider position
+            function updateSlider() {
+                const visibleCount = getVisibleCount();
+                const testimonialCard = document.querySelector('.testimonial-card');
+                const cardWidth = testimonialCard ? testimonialCard.offsetWidth + 30 : 0; // +30 for margin
+                
+                const translateValue = currentIndex === 0 ? 0 : -currentIndex * cardWidth;
+                container.style.transform = `translateX(${translateValue}px)`;
+                
+                // Update active dot
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[Math.min(currentIndex, dots.length - 1)].classList.add('active');
+            }
+            
+            // Set up click events for dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateSlider();
+                });
+            });
+            
+            // Set up click events for navigation arrows
+            prevBtn.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                const testimonialCount = document.querySelectorAll('.testimonial-card').length;
+                const visibleCount = getVisibleCount();
+                
+                if (currentIndex < testimonialCount - visibleCount) {
+                    currentIndex++;
+                    updateSlider();
+                }
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', updateSlider);
+            
+            // Initial update
+            updateSlider();
+            
+            // Auto slide (optional)
+            setInterval(() => {
+                const testimonialCount = document.querySelectorAll('.testimonial-card').length;
+                const visibleCount = getVisibleCount();
+                
+                if (currentIndex < testimonialCount - visibleCount) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                
+                updateSlider();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
